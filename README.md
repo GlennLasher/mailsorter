@@ -76,7 +76,7 @@ To see the list of accounts, do this:
 ## Advanced
 
 If you want a rule to go off before others, you can use the priority
-colume in the rule table.  It defaults to 10.  Setting a lower number
+column in the rule table.  It defaults to 10.  Setting a lower number
 will make it go off sooner; a higher number will make it go off later.
 
 The database also contains a log of all actions.  Simply select from
