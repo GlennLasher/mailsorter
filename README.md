@@ -1,6 +1,6 @@
 # Mailsort
 
-Python script to sort your email on a POP server
+Python script to sort your email on a IMAP server
 
 ## Why?
 
