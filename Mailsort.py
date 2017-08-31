@@ -31,9 +31,11 @@ class Rule:
         self.logger = logger
 
     def execute(self):
-        self.logger.addentry ("Applying rule: if %s contains %s, move to %s." %
-                              (self.field, self.searchstring, self.destination), 
-                              account_id = self.accountid, rule_id = self.id)
+        #Logs were too verbose.
+        #TODO: Make this configurable
+        #self.logger.addentry ("Applying rule: if %s contains %s, move to %s." %
+        #                      (self.field, self.searchstring, self.destination), 
+        #                      account_id = self.accountid, rule_id = self.id)
         status, detail = self.M.select ("Inbox")
         status, result = self.M.search (None, self.field, self.searchstring)
         for msgid in result[0].split():
@@ -85,7 +87,7 @@ class Account:
         else:
             self.logger.addentry ("Login as %s failed." % (self.username), 
                                   account_id = self.id)
-        print "Login result:", status, detail
+        self.logger.addentry("Login result: {0} {1}".format(status, detail)
         return status, detail
 
     def disconnect(self):
