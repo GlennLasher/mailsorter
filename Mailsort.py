@@ -43,7 +43,7 @@ class Rule:
             if (status == 'OK'):
                 self.M.store(msgid, '+FLAGS', '\\Deleted')
             self.logger.addentry("Moving message %s to %s." % (msgid, self.destination),
-                                 account_id = self.accountid, rule_id = self.ruleid)
+                                 account_id = self.accountid, rule_id = self.id)
         self.M.expunge()
 
 class Account:
