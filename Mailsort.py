@@ -87,7 +87,8 @@ class Account:
         else:
             self.logger.addentry ("Login as %s failed." % (self.username), 
                                   account_id = self.id)
-        self.logger.addentry("Login result: {0} {1}".format(status, detail)
+        self.logger.addentry("Login result: {0} {1}".format(status, detail), 
+	                     account_id = self.id)
         return status, detail
 
     def disconnect(self):
